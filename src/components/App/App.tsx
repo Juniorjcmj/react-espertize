@@ -19,17 +19,16 @@ function App() {
     <div className="App">
      <Header title = 'Sistema Gestão' />    
       <Container >
-       <Button
-       onClick={()=> window.alert('Clicou no botão')}
-       appendIcon={<TestComponent />}
-       >
-         Potato
-       </Button>
-       <Input
-        placeholder='Rio de janeiro'
-        value={street}
-        onChange={e => setStreet(e.target.value)}
-       />
+           <ul>
+             {
+               ['Daniel', 'Clarinha', 'Isabela', 'Maria Luiza'].map((name, index) =>{
+                  return <li key={index}>
+                             {name}
+                         </li>
+
+               })
+             }
+           </ul>
      </Container>
       </div>
        
