@@ -9,11 +9,11 @@ declare interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = (props) => {
     return <button 
-    className="AppButton" 
-    onClick={props.onClick}
-    >
-        {props.children || 'Botão sem none'}
-        {props.appendIcon}
+            className="AppButton" 
+            onClick={props.onClick}
+            >
+                {props.children || 'Botão sem none'}
+                {props.appendIcon}
         
     </button>
     
