@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '../Header';
 import './App.css';
 import Container from '../../shared/Container/Container';
+import Table from '../../shared/Table';
 
 
 function TestComponent (){
@@ -17,7 +18,7 @@ function App() {
     <div className="App">
      <Header title = 'Sistema Gestão' />    
       <Container >
-           
+           <Table />
      </Container>
       </div>
        
