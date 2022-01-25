@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../logo.svg';
 import './App.css';
 import TestComponent from '../TestComponent';
-import ClassComponent from '../ClasseComponent';
+
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <TestComponent name = "Fuzileiros Navais" />
-        <ClassComponent name='Mundo JavasCript' />
+       
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
