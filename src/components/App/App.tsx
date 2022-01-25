@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <TestComponent />
+        <TestComponent name = "Fuzileiros Navais" />
         <ClassComponent name='Mundo JavasCript' />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
