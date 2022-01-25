@@ -6,3 +6,8 @@
 
   font-family: 'Latu', sans-serif;
 }
+.Container{
+  margin: 0 auto;
+  max-width: 480px;
+  margin-top: 10px;
+}
