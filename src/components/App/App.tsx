@@ -2,26 +2,26 @@ import { useState } from 'react';
 import Header from '../Header';
 import './App.css';
 import Container from '../../shared/Container/Container';
-import Table from '../../shared/Table';
+import Table, { TableHeader } from '../../shared/Table';
+import Products from '../../shared/Table/Table.mockdata';
 
-
-function TestComponent (){
-  return <img width={16} src='http://1.bp.blogspot.com/-EXLt4mka7Qs/U-DiNSKETSI/AAAAAAAAGqI/lfw8PYnoNuk/s1600/Bot%C3%A3o-Desliga-em-png-queroiamgem-Cei%C3%A7a-Crispim+(1).png' alt='clicar'></img>
-}
-
+const headers: TableHeader[] = [
+  {key: 'id', value: 'ID'},
+  {key: 'name', value: 'Product'},
+  {key: 'price', value: 'Price',right: true },
+  {key: 'stock', value: 'Available Stock', right: true}]
 
 function App() {
-
-  const [street, setStreet] = useState('')
-
   return (
     <div className="App">
      <Header title = 'Sistema Gestão' />    
       <Container >
-           <Table />
+           <Table
+           headers={headers}
+           data={Products}
+           />
      </Container>
-      </div>
-       
+      </div>       
   );
 }
 
