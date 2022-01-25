@@ -1,10 +1,10 @@
 import React from 'react'
-//import './Table.scss'
+import './Table.scss'
 declare interface TableProps{
 
 }
 const Table: React.FC<TableProps> = (props)=> {
-     return <table>
+     return <table className='AppTable'>
        <thead>
            <tr>
                <th>Empresa</th>
