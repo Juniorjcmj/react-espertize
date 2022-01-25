@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import Button from '../../shared/Button';
+import { useState } from 'react';
 import Header from '../Header';
 import './App.css';
 import Container from '../../shared/Container/Container';
-import Input from '../../shared/Input';
 
 
 function TestComponent (){
@@ -19,16 +17,7 @@ function App() {
     <div className="App">
      <Header title = 'Sistema Gestão' />    
       <Container >
-           <ul>
-             {
-               ['Daniel', 'Clarinha', 'Isabela', 'Maria Luiza'].map((name, index) =>{
-                  return <li key={index}>
-                             {name}
-                         </li>
-
-               })
-             }
-           </ul>
+           
      </Container>
       </div>
        
