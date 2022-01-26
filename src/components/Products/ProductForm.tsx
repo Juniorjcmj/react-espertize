@@ -9,27 +9,47 @@ const initialFormState ={
     price:'',
     stock:''
 }
+export declare interface ProductCreator{
+    name: string
+    price: number
+    stock: number
+}
 
-const ProductForm = () => {
+declare interface ProductFormProps{
+ onSubmit: (product: ProductCreator) => void
+}
 
-  const [form, setForm] = useState(initialFormState);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-  {
-      const {value, name} = event.target
-      setForm({
-          ...form,
-          [name]:value
-      })
-  }
+    const ProductForm: React.FC<ProductFormProps> = (props) => {
+
+            const [form, setForm] = useState(initialFormState);
+
+            const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+            {
+                const {value, name} = event.target
+                setForm({
+                    ...form,
+                    [name]:value
+                })
+            }
+    const handleFormSubmit = () =>{
+        const productDto = {
+            name: String(form.name),
+            price: parseFloat(form.price),
+            stock:Number(form.stock)
+        }
+        props.onSubmit(productDto);
+        setForm(initialFormState);
+    }
 
     return <Form
                title='Cadastro de produtos'
-               onSubmit={()=> console.log(form)}
+               onSubmit={handleFormSubmit}
                >
               <Input 
                 onChange={handleInputChange}
                 name='name'
+                value={form.name}
                 label='Name'
                 placeholder='E.g: Cookie'
                 required
@@ -38,6 +58,7 @@ const ProductForm = () => {
                 onChange={handleInputChange}
                 name='price'
                 label='Price'
+                value={form.price}
                 type= "number"
                 step= "0.01"
                 min="0"
@@ -48,6 +69,7 @@ const ProductForm = () => {
                 onChange={handleInputChange}
                 name='stock'
                 label='Estoque'
+                value={form.stock}
                 type= "number"
                 min="0"
                 placeholder='E.g: Cookie'
